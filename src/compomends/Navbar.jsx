@@ -3,8 +3,8 @@ import React from "react";
 const Navbar = () => {
   return (
     <>
-      <section className="h-24 text-2xl  w-full flex items-center  text-white  bg-gray-800 gap-10 justify-center ">
-        <div className="flex flex-row fixed overflow-hidden z-10 bg-inherit w-full max-w-4xl justify-between border rounded-full py-4 px-7">
+      <section className="h-24 text-2xl fixed  z-[1000]  w-full flex items-center bg-transparent gap-10 justify-center ">
+        <div className="flex flex-row text-white  bg-gray-800 w-full max-w-4xl justify-between border rounded-full py-4 px-7">
           <div>
             <h1 className=" cursor-pointer">Pratik shelar</h1>
           </div>

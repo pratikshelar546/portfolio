@@ -1,14 +1,17 @@
+import Home from "./compomends/Home";
 import Navbar from "./compomends/Navbar";
-import Main from "./pages/Main";
-import Skillspage from "./pages/Skillspage";
+import Projects from "./compomends/Projects";
+import Skills from "./compomends/Skills";
+
 
 
 function App() {
   return (
     <>
       <Navbar />
-      <Main />
-      <Skillspage />
+      <Home />
+      <Skills />
+      <Projects/>
     </>
   );
 }
