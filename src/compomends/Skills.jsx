@@ -5,7 +5,7 @@ const Skills = () => {
   return (
     <>
       <main id="skills">
-        <section className=" h-full top-20 relative w-full bg-white text-black  flex flex-col items-center justify-center p-5 ">
+        <section className=" h-full top-20 relative w-full bg-gray-200 text-gray-700  flex flex-col items-center justify-center p-5 ">
           <div className="w-full max-w-4xl flex justify-center items-center flex-col">
             <h1 className="text-5xl font-semibold  pb-4">Skills</h1>
             <h1 className="text-4xl pb-8 font-semibold">
@@ -20,7 +20,7 @@ const Skills = () => {
                       <img
                         src={data.image}
                         alt={data.name}
-                        className=" w-auto h-24"
+                        className=" w-auto h-24 mix-blend-darken"
                       />
                     </>
                   );
