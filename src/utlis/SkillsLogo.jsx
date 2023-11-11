@@ -11,7 +11,7 @@ import mongo from "../images/mongo.png";
 import muis from "../images/mui.png";
 import nodes from "../images/node.png";
 import sqls from "../images/sql.png";
-
+import docker from "../images/docker.png"
 
 export const logo =[
     {
@@ -37,6 +37,8 @@ export const logo =[
         image:boot
     },{
         image:mongo
+    },{
+        image:docker
     },{
         image:sqls
     },{

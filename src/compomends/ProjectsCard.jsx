@@ -1,33 +1,37 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import project from "../utlis/ProjectsTitle";
 import { FiGithub,FiExternalLink } from "react-icons/fi";
+import { easeIn, motion, useInView, useScroll, useTransform } from "framer-motion";
+
 const ProjectsCard = () => {
-  // console.log(project.git);
-  const [hovered, setHoverd] = useState(null);
+    const [hovered, setHoverd] = useState(null);
   const mouseHoverd = (index) => {
     setHoverd(index);
   };
   const mounseLeanved = () => {
     setHoverd(null);
   };
-  // console.log(hovered);
+const ref =useRef(null);
+const inView = useInView({
+  threshold: 0.1, 
+})
   
   return (
     <>
-      <div className="flex flex-col gap-10  h-full w-full ">
+      <motion.div  className="flex flex-col gap-10  h-full w-full ">
         {project &&
           project.map((data, index) => {
             return (
               <>
-                <div
-                  className=" w-full items-center h-full  flex flex-col p-5 gap-5  text-white"
+                <motion.div variants={{hidden:{opacity:0,scale:0, y:100},visible:{opacity:1,scale:1,y:0}}} viewport={{once:true}} initial="hidden" whileInView="visible" transition={{duration:0.8, ease:easeIn}}
+                  className=" w-full items-center h-full  flex flex-col md:p-5 gap-5 text-white"
                   key={index}
                 >
                   {/* <video src={data.video}  muted loop autoPlay/> */}
-                  <div className=" w-4/5 pt-9 px-9 pb-4 border border-[#64ffda]  bg-[#112240] rounded-lg shadow-slate-700 shadow hover:scale-105 transition duration-300">
+                  <div className=" md:w-4/5 w-full md:pt-9 md:px-9 pb-4 md:border border-[#64ffda] md:bg-[#112240] rounded-lg shadow-slate-700 md:shadow hover:scale-105 transition duration-300">
                     <div className="flex justify-center flex-col items-center">
                       <div
-                        className={`relative w-fit h-80 `}
+                        className={`relative w-fit md:h-80 h-56 `}
                         onMouseEnter={() => mouseHoverd(index)}
                         onMouseLeave={mounseLeanved}
                       >
@@ -44,12 +48,12 @@ const ProjectsCard = () => {
                             <img
                               src={data.image}
                               alt={data.title}
-                              className=" h-full w-[580px]  "
+                              className=" h-full md:w-[580px] w-full  "
                             />
                           )}
                         </div>
                       </div>
-                      <div className=" flex flex-col items-center  justify-center w-3/4 gap-1  p-2">
+                      <div className=" flex flex-col items-center justify-center md:w-3/4 w-4/5 gap-2  p-2">
                         <h1 className="text-2xl font-serif ">{data.title}</h1>
                         <h2 className="text-sm font-serif">{data.key}</h2>
                         <h2 className="text-sm font-serif text-center text-[#64ffda]">
@@ -70,11 +74,11 @@ const ProjectsCard = () => {
                         size={"1.5rem"}/>
                     </a>}
                   </div>
-                </div>
+                </motion.div>
               </>
             );
           })}
-      </div>
+      </motion.div>
     </>
   );
 };
