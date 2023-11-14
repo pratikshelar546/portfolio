@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { VscHome, VscLayers, VscTerminalPowershell } from "react-icons/vsc";
 const LgNav = () => {
   return (
@@ -7,15 +7,15 @@ const LgNav = () => {
       <motion.section variants={{hidden:{opacity:0, scale:0}, visible:{opacity:1,scale:1}}} initial="hidden" animate="visible" transition={{duration:0.6,delay:0.1}}
         className="h-18 text-2xl fixed hidden m-0 z-[1000]  w-full md:flex items-center bg-transparent gap-10 justify-center "
       >
-        <div className="flex flex-row text-white bg-[#0a192f] w-full lg:max-w-6xl md:max-w-2xl  justify-between border rounded-full py-4 px-7">
+        <div className="flex flex-row text-blue-100 bg-[#0a192f] w-full lg:max-w-6xl md:max-w-2xl  justify-between border border-[#64ffda] rounded-full py-4 px-7">
           <motion.div
             variants={{
-              hidden: { opacity: 0, y: -100, x: -50  },
-              visible: { opacity: 4, y: 0,x:0 },
+              hidden: { opacity: 0, y: -100, x: -100  },
+              visible: { opacity: 1, y: 0,x:0 },
             }}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.8, delay: 0.25 }}
+            transition={{ duration: 0.9, delay: 0.25 }}
           >
             <h1 className=" cursor-pointer">Pratik shelar</h1>
           </motion.div>

@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import project from "../utlis/ProjectsTitle";
 import { FiGithub,FiExternalLink } from "react-icons/fi";
-import { easeIn, motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ProjectsCard = () => {
     const [hovered, setHoverd] = useState(null);
@@ -11,10 +11,7 @@ const ProjectsCard = () => {
   const mounseLeanved = () => {
     setHoverd(null);
   };
-const ref =useRef(null);
-const inView = useInView({
-  threshold: 0.1, 
-})
+
   
   return (
     <>
@@ -23,7 +20,7 @@ const inView = useInView({
           project.map((data, index) => {
             return (
               <>
-                <motion.div variants={{hidden:{opacity:0,scale:0, y:100},visible:{opacity:1,scale:1,y:0}}} viewport={{once:true}} initial="hidden" whileInView="visible" transition={{duration:0.8, ease:easeIn}}
+                <motion.div variants={{hidden:{opacity:0,y:100,scale:0.6  },visible:{opacity:1, y:0,scale:1}}} viewport={{once:false}} initial="hidden" whileInView="visible" transition={{duration:1, delay:0}}
                   className=" w-full items-center h-full  flex flex-col md:p-5 gap-5 text-white"
                   key={index}
                 >

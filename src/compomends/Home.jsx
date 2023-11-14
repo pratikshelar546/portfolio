@@ -45,7 +45,7 @@ const LgHome = () => {
                     <img
                       src={twitter}
                       alt="Twitter(x)"
-                      className=" mix-blend-color-dodge object-fill w-12 -m-2 h-12"
+                      className=" mix-blend-lighten object-fill w-12 -m-2 h-12"
                     />
                   </a>
                 </div>
@@ -89,7 +89,8 @@ const SmHome = () => {
   const openResume = () => {
     window.open(resume);
   };
-
+ const aboutText ="Hello! My name is Pratik Shelar from Mumbai, India! I enjoy creating things that make a real-world impact. My journe began in 2022, and over the past year, I've acquired crucial skills such as time management and problem-solving, leading to significant personal growth. I'm excited about the upcoming  years as a web developer."
+ const aboutWords = aboutText.split(" ");
   return (
     <>
       <main id="home">
@@ -100,27 +101,27 @@ const SmHome = () => {
             <div className=" w-full flex flex-col">
               <div className="w-full h-screen relative text-blue-200 gap-3 p-6 flex justify-center -top-10  flex-col  ">
                 <div className="flex flex-col gap-3  ">
-                  <p className="text-[#64ffda] text-sm md:text-xl">
+                  <motion.p variants={{ hidden:{opacity:0,y:100}, visible:{opacity:1,y:0}}} initial="hidden" animate="visible" transition={{duration:0.7,delay:0.1}} className="text-[#64ffda] text-sm md:text-xl">
                     Hi, my name is
-                  </p>
-                  <h1 className="text-4xl md:text-7xl text-blue-100">
+                  </motion.p>
+                  <motion.h1 variants={{ hidden:{opacity:0,y:100}, visible:{opacity:1,y:0}}} initial="hidden" animate="visible" transition={{duration:0.7, delay:0.3}} className="text-4xl md:text-7xl text-blue-100">
                     Pratik Shelar.
-                  </h1>
-                  <h2 className="text-2xl md:text-6xl text-blue-200">
+                  </motion.h1>
+                  <motion.h2 variants={{ hidden:{opacity:0,y:100}, visible:{opacity:1,y:0}}} initial="hidden" animate="visible" transition={{duration:0.7, delay:0.4}} className="text-2xl md:text-6xl text-blue-200">
                     I am Web developer
-                  </h2>
-                  <p className="text-md text-blue-200">
+                  </motion.h2>
+                  <motion.p variants={{ hidden:{opacity:0,y:100}, visible:{opacity:1,y:0}}} initial="hidden" animate="visible" transition={{duration:0.7, delay:0.6}} className="text-md text-blue-200">
                     Web developer with a passion for code, dedicated to turning
                     your ideas into interactive reality. Explore my portfolio to
                     witness the fusion of creativity and technology. Let's
                     collaborate to bring your vision to life on the web.
-                  </p>
-                  <p className="text-sm md:text-lg underline flex gap-2 p-2 items-center">
+                  </motion.p>
+                  <motion.p variants={{ hidden:{opacity:0,y:100}, visible:{opacity:1,y:0}}} initial="hidden" animate="visible" transition={{duration:0.7, delay:0.7}} className="text-sm md:text-lg underline flex gap-2 p-2 items-center">
                     <img src={gmail} alt="gmail" className="w-5 rounded h-5" />
                     pratikshelar987@gmail.com
-                  </p>
+                  </motion.p>
                 </div>
-                <div className="flex relative gap-6 pb-3">
+                <motion.div variants={{ hidden:{opacity:0,y:100}, visible:{opacity:1,y:0}}} initial="hidden" animate="visible" transition={{duration:0.7, delay:0.7}} className="flex relative gap-6 pb-3">
                   <a href="https://www.linkedin.com/in/pratikshelar987">
                     <img
                       src={linedin}
@@ -142,26 +143,25 @@ const SmHome = () => {
                       className=" mix-blend-plus-lighter object-fill w-10 -m-1 md:w-20 h-10 md:h-20"
                     />
                   </a>
-                </div>
-                <button
+                </motion.div>
+                <motion.button variants={{ hidden:{opacity:0,y:100}, visible:{opacity:1,y:0}}} initial="hidden" animate="visible" transition={{duration:0.7, delay:0.8}}
                   onClick={openResume}
                   className="text-xl font-semibold  text-blue-200 px-5 md:px-8 w-fit py-2 md:py-3 border border-[#64ffda]"
                 >
                   Resume
-                </button>
+                </motion.button>
               </div>
 
               <div className="text-blue-100 w-full font-serif relative px-6 gap-3 flex flex-col justify-center items-start">
-                <h1 className=" font-normal text-2xl">-About Me</h1>
+                <motion.h1 variants={{ hidden:{opacity:0,x:-100}, visible:{opacity:1,x:0}}} initial="hidden" whileInView="visible" transition={{ duration:1 }} className=" font-normal text-2xl">-About Me</motion.h1>
 
-                <p className=" text-blue-200">
-                  Hello! My name is Pratik Shelar from Mumbai, India! I enjoy
-                  creating things that make a real-world impact. My journey
-                  began in 2022, and over the past year, I've acquired crucial
-                  skills such as time management and problem-solving, leading to
-                  significant personal growth. I'm excited about the upcoming
-                  years as a web developer.
-                </p>
+                <motion.p className="w-full text-blue-200">
+                 {
+                  aboutWords.map((text,index)=>(
+                    <motion.span variants={{ hidden:{opacity:0,x:100}, visible:{opacity:1,x:0}}} initial="hidden" whileInView="visible" transition={{ duration:0.5 ,delay: 0.09* index}}>{text}{" "}</motion.span>
+                  ))
+                 }
+                </motion.p>
                 <div className=" shadow-smd shadow-[#64ffda]  border-[#64ffda] w-full flex">
                   <img
                     src={pratik}
