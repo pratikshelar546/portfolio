@@ -89,7 +89,7 @@ const SmHome = () => {
   const openResume = () => {
     window.open(resume);
   };
- const aboutText ="Hello! My name is Pratik Shelar from Mumbai, India! I enjoy creating things that make a real-world impact. My journe began in 2022, and over the past year, I've acquired crucial skills such as time management and problem-solving, leading to significant personal growth. I'm excited about the upcoming  years as a web developer."
+ const aboutText ="Hello! My name is Pratik Shelar from Mumbai, India! I enjoy creating things that make a real-world impact. My journey began in 2022, and over the past year, I've acquired crucial skills such as time management and problem-solving, leading to significant personal growth. I'm excited about the upcoming  years as a web developer."
  const aboutWords = aboutText.split(" ");
   return (
     <>
