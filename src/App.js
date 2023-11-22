@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import Home from "./compomends/Home";
 import Navbar from "./compomends/Navbar";
 import Projects from "./compomends/Projects";
