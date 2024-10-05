@@ -16,6 +16,7 @@ const project = [
     image: flipkart,
     video: flipkartvideo,
     git: "https://github.com/pratikshelar546/flipcart-clone",
+    web:"https://shopkart-xea2.onrender.com/"
   },
   {
     title: "zomato clone",
