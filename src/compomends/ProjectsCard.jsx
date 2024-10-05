@@ -33,21 +33,12 @@ const ProjectsCard = () => {
                         onMouseLeave={mounseLeanved}
                       >
                         <div className="h-full w-full flex justify-center">
-                          {hovered === index ? (
-                            <video
-                              src={data.video}
-                              muted
-                              loop
-                              autoPlay
-                              className="h-full w-full"
-                            />
-                          ) : (
+                        
                             <img
                               src={data.image}
                               alt={data.title}
                               className=" h-full md:w-[580px] w-full  "
                             />
-                          )}
                         </div>
                       </div>
                       <div className=" flex flex-col items-center justify-center md:w-3/4 w-4/5 gap-2  p-2">
